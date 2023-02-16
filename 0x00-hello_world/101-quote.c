@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <unistd.h>
 /**
- * main - be a genius to understand the simplicity
+ * main -genius to understand the simplicity
  *
- * Return: Always 1 (succes)
+ * Return: Always 1 (success)
  */
 int main(void)
 {
