@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - pragramme printing new line with prift function
+ * main - pragramme printing new line with printf function
  *
  * Return: Always 0 (success)
  */
