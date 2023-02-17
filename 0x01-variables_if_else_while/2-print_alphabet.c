@@ -7,7 +7,7 @@
 int main(void)
 {
 char letter = 'a';
-while (letter = 'a'; letter <= 'z')
+while (letter = 'a'); letter <= 'z'))
 putchar(letter);
 letter++;
 putchar('\n');
