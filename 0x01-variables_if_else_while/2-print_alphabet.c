@@ -6,8 +6,8 @@
  */
 int main(void)
 {
-char letter = 'abcdefghijklmnopqrstuvwxyz';
-while (letter <= 'z')
+char letter = 'a';
+while (letter = 'a'; letter <= 'z')
 putchar(letter);
 letter++;
 putchar('\n');
