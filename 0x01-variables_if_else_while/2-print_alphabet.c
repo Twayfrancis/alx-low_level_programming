@@ -6,10 +6,9 @@
  */
 int main(void)
 {
-char letter = 'abcdefghijklmnopqrstuvwxyz';
-while (letter <= 'z')
+char letter;
+for (letter = 'a'; letter <= 'z'; letter++)
 putchar(letter);
-letter++;
 putchar('\n');
 return (0);
 }
