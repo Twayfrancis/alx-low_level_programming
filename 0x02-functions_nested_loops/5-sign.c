@@ -2,7 +2,8 @@
 /**
  * print_sign - Write a function that prints the sign of a number.
  * @n: number inpit
- * Return: 1 prints '+' n > 0, 0 prints '0' n = 0, -1 prints '_' n < 0
+ * Author Tway
+ * Return: 1 prints '+' n > 0, 0 prints '0' n = 0, -1 prints '-' n < 0
  */
 int print_sign(int n)
 {
@@ -18,7 +19,7 @@ return (0);
 }
 else
 {
-_putchar('_');
+_putchar('-');
 return (-1);
 }
 }
