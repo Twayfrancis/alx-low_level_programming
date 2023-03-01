@@ -6,17 +6,27 @@
  */
 char *cap_string(char *str)
 {
-int t;
-for (t = 0; str[t] != '\0'; t++)
-{
-if (t == 0 || (str[t - 1]) ||
-str[t - 1] == ',' || str[t - 1] == ';' || str[t - 1] == '.' ||
-str [t - 1] == '!' || str[t - 1] == '?' || str[t - 1] == '"' ||
-str[t - 1] == '(' || str[t - 1] == ')' || str[t - 1] == '{' ||
-str[t - 1] == '}')
-{
-str[t] = (str[t]);
-}
-}
-return (str);
+  int index = 0;
+  while (str[index])
+  {
+    while (!(str[index] >= 'a' && str[index] <= 'z'))
+      index++;
+    if (str[index - 1] == ' ' ||
+        str[index - 1] == '\t' ||
+		    str[index - 1] == '\n' ||
+		    str[index - 1] == ',' ||
+		    str[index - 1] == ';' ||
+		    str[index - 1] == '.' ||
+		    str[index - 1] == '!' ||
+		    str[index - 1] == '?' ||
+		    str[index - 1] == '"' ||
+		    str[index - 1] == '(' ||
+		    str[index - 1] == ')' ||
+		    str[index - 1] == '{' ||
+		    str[index - 1] == '}' ||
+		    index == 0)
+      str[index] -= 32;
+    index++;
+  }
+  return (str);
 }
