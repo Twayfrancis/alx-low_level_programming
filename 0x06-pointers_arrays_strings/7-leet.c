@@ -7,19 +7,18 @@
  */
 char *leet(char *str)
 {
-int t, j;
-char *letters = "aAeEoOtTlL";
-char *numbers = "44330771";
-for (t = 0; str[t] != '\0'; t++)
+char *s = str;
+char a[] = { 'a', 'e', 'o', 't', 'l' };
+char n[] = { 4, 3, 0, 7, 1 };
+int t = 0;
+while (*str)
 {
-for (j = 0; str[j] != '\0'; j++)
+for (t = 0; t < 5; t++)
 {
-if (str[t] == letters[j])
-{
-str[t] = numbers[j];
-break;
+if (*str == a[t] || *str == a[t] - 32)
+*str = n[t] + '0';
 }
+str++;
 }
-}
-return (str);
+return (s);
 }
