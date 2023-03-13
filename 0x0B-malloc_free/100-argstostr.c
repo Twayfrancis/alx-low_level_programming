@@ -26,8 +26,7 @@ len++; /* Add one for the newline character */
 }
 
 /* Allocate memory for the concatenated string */
-len += ac;
-str = malloc(sizeof(char) * len);
+str = malloc(sizeof(char) * len + 1);
 
 if (str == NULL)
 return (NULL);
