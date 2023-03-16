@@ -42,3 +42,19 @@ If min > max, return NULL
 If malloc fails, return NULL
 The function first checks if min is greater than max. If so, it returns NULL as that is an invalid input. Next, the function allocates memory for the array using malloc, taking care to allocate enough memory for all the values from min to max. If malloc fails, the function returns NULL.
 Finally, the function uses a loop to populate the array with values from min to max. The function returns a pointer to the newly created array._
+
+**#100-realloc.c**
+
+_Write a function that reallocates a memory block using malloc and free
+Prototype: void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+where ptr is a pointer to the memory previously allocated with a call to malloc: malloc(old_size)
+old_size is the size, in bytes, of the allocated space for ptr
+and new_size is the new size, in bytes of the new memory block
+The contents will be copied to the newly allocated space, in the range from the start of ptr up to the minimum of the old and new sizes
+If new_size > old_size, the “added” memory should not be initialized
+If new_size == old_size do not do anything and return ptr
+If ptr is NULL, then the call is equivalent to malloc(new_size), for all values of old_size and new_size
+If new_size is equal to zero, and ptr is not NULL, then the call is equivalent to free(ptr). Return NULL
+Don’t forget to free ptr when it makes sense
+The function first checks if new_size is equal to old_size. If so, it returns ptr as nothing needs to be done. If ptr is NULL, it simply returns the result of malloc(new_size). If new_size is 0 and ptr is not NULL, it calls free(ptr) and returns NULL.
+Finally, if none of the above conditions are met, the function allocates memory for the new block using malloc(new_size), copies the contents of the old block to the new block using memcpy, frees the old block using free(ptr), and returns a pointer to the newly allocated space._
