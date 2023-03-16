@@ -43,7 +43,7 @@ If malloc fails, return NULL
 The function first checks if min is greater than max. If so, it returns NULL as that is an invalid input. Next, the function allocates memory for the array using malloc, taking care to allocate enough memory for all the values from min to max. If malloc fails, the function returns NULL.
 Finally, the function uses a loop to populate the array with values from min to max. The function returns a pointer to the newly created array._
 
-**#100-realloc.c**
+5. **#100-realloc.c**
 
 _Write a function that reallocates a memory block using malloc and free
 Prototype: void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
