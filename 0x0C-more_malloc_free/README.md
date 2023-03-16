@@ -15,7 +15,7 @@ _Write a function that allocates memory for an array, using malloc.
 Prototype: void *_calloc(unsigned int nmemb, unsigned int size);
 The calloc function allocates memory for an array of nmemb elements of size bytes each and returns a pointer to the allocated memory.
 The memory is set to zero
-If nmemb or size is 0, then _calloc returns NULL
-If malloc fails, then _calloc returns NULL. 
+If nmemb or size is 0, then calloc returns NULL
+If malloc fails, then calloc returns NULL. 
 The function takes two arguments, nmemb and size, which represent the number of elements to allocate and the size of each element in bytes, respectively. The function returns a pointer to the allocated memory, which is initialized to zero using the memset() function.
 Note that this implementation uses the malloc() and memset() functions from the stdlib.h and string.h libraries, respectively._
