@@ -31,3 +31,14 @@ If nmemb or size is 0, then calloc returns NULL
 If malloc fails, then calloc returns NULL. 
 The function takes two arguments, nmemb and size, which represent the number of elements to allocate and the size of each element in bytes, respectively. The function returns a pointer to the allocated memory, which is initialized to zero using the memset() function.
 Note that this implementation uses the malloc() and memset() functions from the stdlib.h and string.h libraries, respectively._
+
+4. **#3-array_range.c**
+
+_Write a function that creates an array of integers.
+Prototype: int *array_range(int min, int max);
+The array created should contain all the values from min (included) to max (included), ordered from min to max
+Return: the pointer to the newly created array
+If min > max, return NULL
+If malloc fails, return NULL
+The function first checks if min is greater than max. If so, it returns NULL as that is an invalid input. Next, the function allocates memory for the array using malloc, taking care to allocate enough memory for all the values from min to max. If malloc fails, the function returns NULL.
+Finally, the function uses a loop to populate the array with values from min to max. The function returns a pointer to the newly created array.__
