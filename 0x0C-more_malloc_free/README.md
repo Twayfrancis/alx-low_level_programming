@@ -41,4 +41,4 @@ Return: the pointer to the newly created array
 If min > max, return NULL
 If malloc fails, return NULL
 The function first checks if min is greater than max. If so, it returns NULL as that is an invalid input. Next, the function allocates memory for the array using malloc, taking care to allocate enough memory for all the values from min to max. If malloc fails, the function returns NULL.
-Finally, the function uses a loop to populate the array with values from min to max. The function returns a pointer to the newly created array.__
+Finally, the function uses a loop to populate the array with values from min to max. The function returns a pointer to the newly created array._
