@@ -1,34 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
- * main - prints the opcodes of itself
- * @argc: num of arguments supplied to the program
- * @argv: an array of pointers to the arguments
- * Return: 0 success
+ * main - Prints the opcodes of itself.
+ * @argc: The number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
+ *
+ * Return: Always 0.
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
+	int bytes, index;
+	int (*address)(int, char **) = main;
+	unsigned char opcode;
+
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return (1);
+		exit(1);
 	}
 
-	int num_bytes = atoi(argv[1]);
+	bytes = atoi(argv[1]);
 
-	if (num_bytes < 0)
+	if (bytes < 0)
 	{
 		printf("Error\n");
-		return (2);
+		exit(2);
 	}
 
-	unsigned char *ptr = (unsigned char *)main;
-	int i;
-
-	for (i = 0; i < num_bytes; i++)
+	for (index = 0; index < bytes; index++)
 	{
-		printf("%02x", *(ptr + i));
+		opcode = *(unsigned char *)address;
+		printf("%.2x", opcode);
+
+		if (index == bytes - 1)
+			continue;
+		printf(" ");
+
+		address++;
 	}
+
 	printf("\n");
+
 	return (0);
 }
