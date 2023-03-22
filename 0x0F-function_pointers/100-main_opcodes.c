@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/**
+ * main - prints the opcodes of itself
+ * @argc: num of arguments supplied to the program
+ * @argv: an array of pointers to the arguments
+ * Return: 0 success
+ */
 int main(int argc, char **argv)
 {
 	if (argc != 2)
