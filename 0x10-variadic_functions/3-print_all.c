@@ -23,20 +23,16 @@ while (format != NULL && format[i] != '\0')
 	switch (format[i])
 	{
 		case 'c':
-			c = va_arg(args, int);
-			printf("%c", c);
+			c = va_arg(args, int), printf("%c", c);
 			break;
 		case 'i':
-			n = va_arg(args, int);
-			printf("%d", n);
+			n = va_arg(args, int), printf("%d", n);
 			break;
 		case 'f':
-			f = (float) va_arg(args, double);
-			printf("%f", f);
+			f = (float) va_arg(args, double), printf("%f", f);
 			break;
 		case 's':
-			s = va_arg(args, char *);
-			printf("%s", s != NULL ? s : "(nil)");
+			s = va_arg(args, char *), printf("%s", s != NULL ? s : "(nil)");
 			break;
 		default:
 			i++;
@@ -51,6 +47,5 @@ while (format != NULL && format[i] != '\0')
 	}
 	i++;
 }
-va_end(args);
-printf("\n");
+va_end(args), printf("\n");
 }
