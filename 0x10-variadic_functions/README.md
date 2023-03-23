@@ -11,3 +11,7 @@ The function takes a string separator as the separator to print between numbers,
 3.#**2-print_strings.c**
 
 The function takes a separator string as the string to be printed between the strings, or NULL if no separator should be printed. It also takes an unsigned integer n as the number of strings passed to the function, followed by a variable number of parameters represented by the ellipsis .... The function uses the va_list type to traverse the variable arguments list, and va_start, va_arg, and va_end macros to access each string and print it along with the separator string (if not NULL), except for the last string which is printed without a separator. If a string is NULL, the function prints (nil) instead of the string. Finally, the function prints a new line.
+
+4.#**3-print_all.c**
+
+The function takes a format string as a list of types of arguments passed to the function, represented by the characters c, i, f, and s for char, integer, float, and char * types, respectively. The function uses the va_list type to traverse the variable arguments list, and va_start, va_arg, and va_end macros to access each argument and print it according to its type, followed by a comma and a space separator (if not the last argument). If a char * argument is NULL, the function prints (nil) instead of the string. Finally, the function prints a new line.
