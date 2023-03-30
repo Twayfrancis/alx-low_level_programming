@@ -34,8 +34,16 @@ Inside the loop, the current node is set to the head of the list, and the head p
 
 Note that the list_t struct is assumed to have a next pointer and a str pointer that points to a dynamically allocated string, as is common in linked list implementations.
 
-##**100-first.c**
+5. ##**100-first.c**
 
 This function simply prints the desired message using the printf function, which takes a format string and any number of arguments to be printed according to the format. The format string includes two lines of text separated by a newline escape sequence (\n), and the whole string is enclosed in double quotes.
 
 To ensure that this function is executed before the main function, it can be declared as a constructor using the __attribute__((constructor)) syntax. This attribute causes the function to be automatically called before the main function is executed.
+
+6. ##**101-hello_holberton.asm**
+
+This program defines a null-terminated string containing the message to print, and declares the printf function as an external symbol. It then defines a main function that sets up a stack frame, calls printf with the message string, cleans up the stack, and returns 0.
+
+To compile this program using NASM and GCC, you can save the above code in a file called hello.asm, and then use the following commands:
+**nasm -f elf64 101-hello_holberton.asm && gcc -no-pie -std=gnu89 101-hello_holberton.o -o hello**
+This should produce an executable file called hello that prints "Hello, Holberton" followed by a new line when executed. Note that the program uses the xor instruction to clear the eax register before calling printf, as this is required by the System V AMD64 ABI used by most Unix-like systems.
