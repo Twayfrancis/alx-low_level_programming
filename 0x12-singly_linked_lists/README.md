@@ -33,3 +33,9 @@ This function takes a pointer to the head of a linked list, and iteratively free
 Inside the loop, the current node is set to the head of the list, and the head pointer is updated to point to the next node in the list (or NULL if there are no more nodes). The free function is then called to deallocate the memory allocated for the string and node pointed to by current_node.
 
 Note that the list_t struct is assumed to have a next pointer and a str pointer that points to a dynamically allocated string, as is common in linked list implementations.
+
+##**100-first.c**
+
+This function simply prints the desired message using the printf function, which takes a format string and any number of arguments to be printed according to the format. The format string includes two lines of text separated by a newline escape sequence (\n), and the whole string is enclosed in double quotes.
+
+To ensure that this function is executed before the main function, it can be declared as a constructor using the __attribute__((constructor)) syntax. This attribute causes the function to be automatically called before the main function is executed.
