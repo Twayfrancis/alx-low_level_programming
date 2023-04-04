@@ -10,21 +10,21 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *current_node = head;
 	size_t count = 0;
+	long int result;
 
-	while (current_node != NULL)
+	while (head)
 	{
-		printf("[%p] %d\n", (void *)current_node, current_node->n);
+		result = head - head->next;
+		printf("[%p] %d\n", (void *)head, head->n);
 		count++;
+		
+		if (result > 0)
+		head = head->next;
 
-		if (current_node > current_node->next)
-		{
-			current_node = current_node->next;
-		}
 		else
 		{
-			printf("-> [%p} %d\n", (void *)current_node->next, current_node->next->n);
+			printf("-> [%p} %d\n", (void *)head->next, head->next->n);
 			exit(98);
 		}
 	}
