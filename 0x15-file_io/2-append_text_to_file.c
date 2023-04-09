@@ -11,25 +11,26 @@
 */
 int append_text_to_file(const char *filename, char *text_content)
 {
-    int Tawai_file, status, i;
+	int Tawai_file, status, i;
 
-    if (filename)
-    return (-1);
+	if (filename == NULL)
+		return (-1);
 
-    if (text_content)
-    return (1);
+	if (text_content == NULL)
+		return (1);
 
-    Tawai_file = open(filename, O_APPEND | O_WRONLY);
-    if (Tawai_file == -1)
-    return (-1);
+	Tawai_file = open(filename, O_APPEND | O_WRONLY);
 
-    for (i = 0; text_content[i] != '\0'; i++)
-    ;
-    status = write(Tawai_file, text_content, i);
+	if (Tawai_file == -1)
+		return (-1);
 
-    if (status == -1)
-    return (-1);
+	for (i = 0; text_content[i] != '\0'; i++)
+		;
+	status = write(Tawai_file, text_content, i);
 
-    close(Tawai_file);
-    return (1);
+	if (status == -1)
+		return (-1);
+
+	close(Tawai_file);
+	return (1);
 }
