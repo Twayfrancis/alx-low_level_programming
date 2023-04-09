@@ -15,15 +15,21 @@ int append_text_to_file(const char *filename, char *text_content)
     {
         return (-1);
     }
-    FILE *file = fopen(filename, 'a');
+    FILE *file = fopen(filename, "a");
     {
+        return (-1);
+    }
+    
+    if (file == NULL)
+    {
+        fprintf(stderr, "Error opening file: %s\n", strerror(errno));
         return (-1);
     }
 
     if (text_content != NULL)
     {
-        fputs(text_content, file);
+        fprintf(file, "%S", text_content);
     }
     fclose(file);
-    return (-1);
+    return (1);
 }
