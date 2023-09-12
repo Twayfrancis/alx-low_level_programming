@@ -1,5 +1,11 @@
 #include "search_algos.h"
 /**
+ * jump_search - searches value in sorted array
+ * @array: pointer to first element of array to search
+ * @size: number of elements in array
+ * @value: value to search for
+ * Return: index of value in array
+ * -1 if not found
  */
 int jump_search(int *array, size_t size, int value)
 {
